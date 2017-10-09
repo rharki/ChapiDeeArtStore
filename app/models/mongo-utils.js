@@ -8,7 +8,7 @@ function mongooseConnect() {
     if (envir == 1) {
         mongoose.connect('mongodb://localhost:27017/artwebsitedatabase');
     } else if (envir == 2) {
-        mongoose.connect('mongodb://admin321:Complex@321@ds113795.mlab.com:13795/chapideeartstore');
+        mongoose.connect('mongodb://backupadmin:Complex!123@ds113795.mlab.com:13795/chapideeartstore');
     }
 
     mongoose.connection
