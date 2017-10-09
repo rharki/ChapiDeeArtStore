@@ -1,0 +1,83 @@
+<!-- <div id="features-wrapper">
+    <section id="features" class="container">
+        <header>
+            <h3>Product Painting Page</h3>
+        </header>
+    </section>
+</div> -->
+
+<div class="colorbody">
+    <div class="container">
+        <br /><br />
+        <div class="row">
+            <div class="9u 12u(mobile)">
+                <img class="imageincontainer" ng-src="{{ 'uploads/images/fulls/' + keyimage[0].primarycategory._id + '/' + keyimage[0].keyitemimagename || 'assets/img/misc/backupimageforcollectionsimages.jpg' }}" alt="preview of painting not available">
+            </div>
+
+            <div class="3u 12u(mobile)">
+                <!-- <h2>Product Painting Page</h2> -->
+                <h5 style="float:right">
+                    <a ng-click=""><</a>  <a ng-click="">Prev</a> | <a ng-click="">Next</a>  <a ng-click="">></a>
+                </h5>
+                <br />
+                <hr />
+                <h2>{{ keyimage[0].keyitemname }}</h2>
+                <h3 class="productimagemedium">{{ keyimage[0].itemmedium }}</h3>
+                <h3 class="productimagemedium">
+                    Size: {{ keyimage[0].itemsize[0] }} inches x {{ keyimage[0].itemsize[0] }} inches
+                </h3>
+                <hr />
+                Share:
+                <a href="https://www.facebook.com/saipriyamahajan" rel="nofollow" target="_blank">
+                    <img class="socialmedialogos" src="https://fineartamerica.com/LogoFacebookFooter.jpg">
+                </a>
+                <a href="https://twitter.com/chapidee" rel="nofollow" target="_blank">
+                    <img class="socialmedialogos" src="https://fineartamerica.com/LogoTwitterFooter.jpg">
+                </a>
+                <a href="https://instagram.com/scottlistfield" rel="nofollow" target="_blank">
+                    <img class="socialmedialogos" src="https://fineartamerica.com/LogoInstagramFooter.jpg">
+                </a>
+                <a href="https://www.pinterest.com/" rel="nofollow" target="_blank">
+                    <img class="socialmedialogos" src="https://fineartamerica.com/LogoPinterestFooter.jpg">
+                </a>
+                <hr />
+                <h3 class="productimagemedium">{{ keyimage[0].keyitemdesc }}</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="9u 12u(mobile)">
+                <h5 style="float:left">
+                    More from this collection
+                </h5>
+                <h5 style="float:right">
+                    <a href="/home">Home</a> | <a href="/collections">Collections</a>
+                </h5>
+                <br />
+                <hr />
+
+            </div>
+
+            <div class="3u 12u(mobile)">
+                <h5 style="float:center">
+                    <strong>
+                        <a ng-click="">Buy the Original Painting</a>
+                    </strong>
+                    <div class="row">
+                        <div class="5u">
+                            Price
+                            <br />
+                            Dimensions
+                        </div>
+                        <div class="7u">
+                            <h5>{{ keyimage[0].itemprice[0] }} {{ keyimage[0].itemprice[1] }}</h5>
+                            <br />
+                            <h5></h5>{{ keyimage[0].itemsize[0] }} inches x {{ keyimage[0].itemsize[0] }} inches</h5>
+                        </div>
+                    </div>
+                </h5>
+            </div>
+
+        </div>
+    </div>
+</div>

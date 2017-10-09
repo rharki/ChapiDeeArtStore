@@ -1,0 +1,51 @@
+<div id="features-wrapper">
+    <section id="features" class="container">
+        <header>
+            <h2>{{collectionname}}</h2>
+        </header>
+    </section>
+
+        <div class="container">
+            <section id="photosgallery">
+                <div class="" ng-repeat="image in collections.images">
+                    <section>
+                <!-- Feature -->
+                        <a href="/product/{{image._id}}" class="imagecollection image featured">
+                            <img ng-src="{{ 'uploads/images/fulls/' + collectioncategoryid + '/' + image.keyitemimagename || 'assets/img/misc/backupimageforcollectionsimages.jpg' }}" alt="preview of painting not available">
+                        </a>
+                        <h3 class="photosgallerycaption">{{image.keyitemname}}</h3>
+                        <p class="photosgallerydesc">{{image.keyitemdesc}}</p>
+                    </section>
+                </div>
+            </section>
+        </div>
+
+    <!-- <section id="features" class="greycolor container"> -->
+    <div id="copyright" class="ng-scope greycolor">
+        <header>
+            <h2><strong>Other Collections</strong></h2>
+        </header>
+        <div class="row">
+            <div class="3u 6u(mobile)" ng-repeat="collection in collections.allcollections | orderBy: 'displaysequence'">
+
+                <!-- Feature -->
+                <section>
+                    <a href="/collections/{{ collection._id }}" class="imagecollection image featured">
+                        <!-- <img src="assets/img/homepageimages/collections/CoffeesConversationsStarbucksForumBangalore.jpg" alt="No preview image available" /> -->
+                        <img ng-src="{{ 'uploads/images/fulls/' + collection.categories[0] + '/' + collection.coverimage.keyitemimagename || 'assets/img/misc/backupimageforcollections.jpg' }}" alt="Sorry, collection cover image not available">
+                    </a>
+                    <header>
+                        <h3>{{ collection.collectionname }}</h3>
+                    </header>
+                    <p>{{ collection.collectiondesc }}</p>
+                </section>
+
+            </div>
+        </div>
+    </div>
+<!--
+        <ul class="actions">
+            <li><a href="#" class="button icon fa-file">Show Me More</a></li>
+        </ul> -->
+    </section>
+</div>

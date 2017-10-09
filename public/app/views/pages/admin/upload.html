@@ -1,0 +1,81 @@
+<section class=" text-center">
+        <h3 class="jumbotron-heading">Add exercise photos</h1>
+        <button ng-click="upload.uploadPhoto()" ng-disabled="uploadPhotoactive" class="btn btn-primary">Upload New Photo</button>
+        <button ng-click="upload.editPhoto()" ng-disabled="!uploadPhotoactive" class="btn btn-warning">Edit Photo</button>
+
+</section>
+
+<hr>
+
+<section class="jumbotron text-center">
+        <span>
+            <header><h2>{{ pagetitle }}</h2></header>
+            <form ng-submit="upload.Submit();">
+                <label ng-show="uploadPhotoactive" class="btn btn-success">
+                    CLICK HERE TO UPLOAD
+                    <input type="file" file-model="file.upload" name="myfile" style="display:none;" onchange="angular.element(this).scope().photoChanged(this.files)"/>
+                </label>
+
+                <span ng-show="!uploadPhotoactive">
+                    <label>Select Photo to Edit: </label><br />
+                    <select name="repeatSelect" id="repeatSelect" ng-model="upload.editPhotoId" ng-change="upload.editPhotoChanged(upload.editPhotoId)">
+                        <option ng-repeat="photo in upload.photos" value="{{photo._id}}">{{photo.keyitemname}}</option>
+                    </select><br />
+                    <span>selected photo = {{ upload.editPhotoId }}</span>
+                </span>
+                </br></br>
+
+
+                <!-- <div ng-show="upload.uploading" class="progress">
+                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                    <span class="sr-only">45% Complete</span>
+                  </div>
+                </div> -->
+
+
+                <img ng-show="uploadPhotoactive" class="mythumbnail" ng-src="{{ thumbnail.dataUrl || 'assets/img/misc/thumbnailimageforphotoupload.jpg' }}" alt="upload photo to see preview here">
+
+                <img ng-show="!uploadPhotoactive" class="thumbnailofphoto" ng-src="{{ thumbnail.dataUrl || 'assets/img/misc/thumbnailimageforphotoedit.png' }}" alt="sorry, couldnt make preview :()">
+                <br />
+
+                <!-- Category Name -->
+                <label>Select Category: </label><br />
+                <select name="repeatSelect" id="repeatSelect" ng-model="upload.selectedcategoryid" ng-selected="upload.selectedcategoryname">
+                    <option ng-repeat="category in upload.categories" value="{{category._id}}">{{category.categoryname}}</option>
+                </select><br />
+                <span>selected category = {{ upload.selectedcategoryid }}</span>
+                <br />
+
+                <!-- Tag Names -->
+                <label>Select all Tags: </label><br />
+                <label ng-repeat="tag in upload.tags">
+                    <div>
+                        <input type="checkbox" name="tagnames" value="{{ tag._id }}" ng-model="upload.selectedtagname[$index]"/>
+                        {{tag.tagname}}&nbsp&nbsp&nbsp&nbsp
+                        </select><br />
+                    </div>
+                </label>
+                <br />
+                <span>selected tag(s) = {{ upload.selectedtagname }}</span>
+                <br /><br />
+
+                <!-- Image Names & Description -->
+                <input class="resizedTextboxtitle" type="text" name="imagename" ng-model="upload.selectedimagename" placeholder="enter image name here" value="upload.selectedimagename" required/>
+                <br /><br />
+                <input class="resizedTextbox" type="text" name="imagedesc" ng-model="upload.selectedimagedesc" placeholder="enter image description here" value="upload.selectedimagedesc"/>
+
+                <br /><br />
+                <button class="btn btn-primary">{{ pagecalltoaction }}</button>
+
+            </form>
+            <br />
+
+            <div ng-show="upload.uploading">
+                <div ng-class="alert">
+                    {{ upload.message }}
+                </div>
+            </div>
+        </span>
+</section>
+
+    </br></br></br></br>

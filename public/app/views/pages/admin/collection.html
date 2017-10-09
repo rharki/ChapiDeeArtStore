@@ -1,0 +1,84 @@
+<section class=" text-center">
+        <h3 class="jumbotron-heading">Create/Edit New Collection</h1>
+        <button ng-click="collection.createColl()" ng-disabled="createCollactive" class="btn btn-primary">Create New Collection</button>
+        <button ng-click="collection.editColl()" ng-disabled="!createCollactive" class="btn btn-warning">Edit Collection</button>
+
+</section>
+
+<hr>
+
+<section class="jumbotron text-center">
+        <span>
+            <header><h2>{{ pagetitle }}</h2></header>
+            <form ng-submit="collection.Submit();">
+
+                <!-- Select Collection to EDIT -->
+                <span ng-show="!createCollactive">
+                    <label>Select Collection to Edit: </label><br />
+                    <select name="repeatSelect" id="repeatSelect" ng-model="collection.editCollectionId" ng-change="collection.editCollectionChanged(collection.editCollectionId)">
+                        <option ng-repeat="coll in collection.allcollections" value="{{coll._id}}">{{coll.collectionname}}</option>
+                    </select><br />
+                    <span>selected collection = {{ collection.editCollectionId }}</span>
+                </span>
+                </br></br>
+
+                <!-- Collection Names & Description -->
+                <input class="resizedTextboxtitle" type="text" name="collname" ng-model="collection.selectedcollname" placeholder="enter collection name here" value="collection.selectedcollname" required/>
+                <br /><br />
+                <input class="resizedTextbox" type="text" name="imagedesc" ng-model="collection.selectedcolldesc" placeholder="enter collection description here" value="collection.selectedcolldesc"/>
+                <br /><br />
+
+                <!-- Display Sequence -->
+                <input type="number" name="displaysequence" ng-model="collection.displaysequence" placeholder="enter display sequence here" value="collection.displaysequence" required/>
+                <br /><br />
+
+                <!-- Select Cover Photo -->
+                <span>
+                    <label>Select Cover Photo for this Collection: </label><br />
+                    <select name="repeatSelect" id="repeatSelect" ng-model="collection.coverimage" ng-change="collection.editPhotoChanged(upload.editPhotoId)">
+                        <option ng-repeat="image in collection.images" value="{{image._id}}">{{ image.keyitemname }} + {{ image.keyitemdesc }}</option>
+                    </select><br />
+                    <span>selected cover photo = {{ collection.coverimage }}</span>
+                </span>
+                </br></br>
+
+                <!-- Category Name -->
+                <label>Select all Categories: </label><br />
+                <label ng-repeat="category in collection.categories">
+                    <div>
+                        <input type="checkbox" name="categorynames" value="{{ category._id }}" ng-model="collection.selectedcategoryid[$index]"/>
+                        {{category.categoryname}}&nbsp&nbsp&nbsp&nbsp
+                        </select><br />
+                    </div>
+                </label>
+                <br />
+                <span>selected tag(s) = {{ collection.selectedcategoryid }}</span>
+                <br /><br />
+
+                <!-- Tag Names -->
+                <label>Select all Tags: </label><br />
+                <label ng-repeat="tag in collection.tags">
+                    <div>
+                        <input type="checkbox" name="tagnames" value="{{ tag._id }}" ng-model="collection.selectedtagname[$index]"/>
+                        {{tag.tagname}}&nbsp&nbsp&nbsp&nbsp
+                        </select><br />
+                    </div>
+                </label>
+                <br />
+                <span>selected tag(s) = {{ collection.selectedtagname }}</span>
+
+                <br /><br />
+                <button class="btn btn-primary">{{ pagecalltoaction }}</button>
+
+            </form>
+            <br />
+
+            <div ng-show="collection.uploading">
+                <div ng-class="alert">
+                    {{ collection.message }}
+                </div>
+            </div>
+        </span>
+</section>
+
+</br></br></br></br>

@@ -1,0 +1,351 @@
+<!-- Banner -->
+    <div id="banner-wrapper">
+        <div class="inner">
+            <section id="banner" class="container">
+                <!-- <p>Use this space for <strong>profound thoughts</strong>.<br />
+                Or an enormous ad. Whatever.</p> -->
+                <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <div class="numbertext">{{currentimage}} / {{numberofimages}}</div>
+                            <img ng-src="{{ 'assets/img/homepageimages/bannerimages/' + currentimagename || 'assets/img/backup/backupforbanner.jpg' }}" alt="Banner Image">
+                            <!-- <img src="assets/img/homepageimages/bannerimages/Scarlet Red.jpg"> -->
+                            <div class="text">{{ currentimagename }}</div>
+                        </div>
+
+                    <a class="prev" ng-click="home.plusSlides(-1)">&#10094;</a>
+                    <a class="next" ng-click="home.plusSlides(1)">&#10095;</a>
+                </div>
+
+        <!-- <div style="text-align:center; display:none">
+            <div class="class-dot">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div> -->
+
+            </section>
+        </div>
+    </div>
+
+<!-- Features -->
+    <div id="features-wrapper">
+        <section id="features" class="container">
+            <header>
+                <h2>Artwork</h2>
+            </header>
+        </section>
+
+            <div class="row">
+                <div class="4u 12u(mobile)" ng-repeat="collection in collections | orderBy: 'displaysequence'">
+                        <section>
+                            <a href="/collections/{{ collection._id }}" class="imagecollection image featured">
+                                <img ng-src="{{ 'uploads/images/fulls/' + collection.categories[0] + '/' + collection.coverimage.keyitemimagename || 'assets/img/misc/backupimageforcollections.jpg' }}" alt="Sorry, collection cover image not available">
+                            </a>
+                            <header>
+                                <h3>{{ collection.collectionname }}</h3>
+                            </header>
+                            <p>{{ collection.collectiondesc }}</p>
+                        </section>
+                </div>
+            </div>
+
+        <section id="photosgallery">
+            <!-- <div class="row"> -->
+                <div class="" ng-repeat="collection in collections | orderBy: 'displaysequence'">
+                        <section >
+                            <a href="/collections/{{ collection._id }}" class="imagecollection image featured">
+                                <img ng-src="{{ 'uploads/images/fulls/' + collection.categories[0] + '/' + collection.coverimage.keyitemimagename || 'assets/img/misc/backupimageforcollections.jpg' }}" alt="Sorry, collection cover image not available">
+                            </a>
+                            <header>
+                                <h3>{{ collection.collectionname }}</h3>
+                            </header>
+                            <p>{{ collection.collectiondesc }}</p>
+                        </section>
+                </div>
+            <!-- </div> -->
+        </section>
+
+        <section id="features" class="container">
+            <ul class="actions">
+                <li><a href="#" class="button icon fa-file">Show Me More</a></li>
+            </ul>
+        </section>
+    </div>
+
+
+<!-- Central Banner -->
+    <div id="banner-wrapper-new">
+        <div class="inner-new">
+            <section id="banner-new" class="container">
+                <p>Use this space for <strong>profound thoughts</strong>.<br />
+                Or an enormous ad. Whatever.</p>
+            </section>
+
+            <div class="row">
+
+                <div class="4u 12u(mobile)">
+                    <img class="img-rounded" src="assets/img/homepageimages/textbanner/img2_slide.jpg">
+                    <div class="content">
+                        <h3>Quam lorem ipsum</h3>
+                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                    </div>
+                </div>
+                <div class="4u 12u(mobile)">
+                    <img class="img-rounded" src="assets/img/homepageimages/textbanner/img2_slide.jpg">
+                    <div class="content">
+                        <h3>Quam lorem ipsum</h3>
+                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                    </div>
+                </div>
+                <div class="4u 12u(mobile)">
+                    <img class="img-rounded" src="assets/img/homepageimages/textbanner/img2_slide.jpg">
+                    <div class="content">
+                        <h3>Quam lorem ipsum</h3>
+                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+<!-- Main -->
+    <div id="main-wrapper">
+        <div id="main" class="container">
+            <div class="row">
+
+                <!-- Content -->
+                    <div id="content" class="8u 12u(mobile)">
+
+                        <!-- Post -->
+                            <article class="box post">
+                                <header>
+                                    <h2><a href="#">I don’t want to say <strong>it’s the aliens</strong> ...<br />
+                                    but it’s the aliens.</a></h2>
+                                </header>
+                                <a href="#" class="imageothers image featured"><img src="assets/img/homepageimages/misc/pic04.jpg" alt="" /></a>
+                                <h3>I mean isn't it possible?</h3>
+                                <p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
+                                ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
+                                sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
+                                in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+                                magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
+                                consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+                                justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
+                                mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
+                                Curabitur leo nibh, rutrum eu malesuada in, tristique at erat.</p>
+                                <ul class="actions">
+                                    <li><a href="#" class="button icon fa-file">Continue Reading</a></li>
+                                </ul>
+                            </article>
+
+                        <!-- Post -->
+                            <article class="box post">
+                                <p></p>
+                                <header>
+                                    <h2><a href="#">By the way, many thanks to <strong>regularjane</strong>
+                                    for these awesome demo photos</a></h2>
+                                </header>
+                                <a href="#" class="imageothers image featured"><img src="assets/img/homepageimages/misc/pic05.jpg" alt="" /></a>
+                                <h3>You should probably check out her work</h3>
+                                <p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
+                                ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
+                                sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
+                                in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+                                consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+                                in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+                                magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
+                                consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+                                justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
+                                mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
+                                Curabitur leo nibh, rutrum eu malesuada in, tristique at erat.</p>
+                                <p>Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat
+                                Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula
+                                vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet
+                                magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in,
+                                tristique at erat. Curabitur leo nibh, rutrum eu malesuada  in, tristique
+                                at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna
+                                tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat
+                                magna tempus</p>
+                                <ul class="actions">
+                                    <li><a href="#" class="button icon fa-file">Continue Reading</a></li>
+                                </ul>
+                            </article>
+
+                    </div>
+
+                <!-- Sidebar -->
+                    <div id="sidebar" class="4u 12u(mobile)">
+
+                        <!-- Excerpts -->
+                            <section>
+                                <ul class="divided">
+                                    <li>
+
+                                        <!-- Excerpt -->
+                                            <article class="box excerpt">
+                                                <header>
+                                                    <span class="date">July 30</span>
+                                                    <h3><a href="#">Just another post</a></h3>
+                                                </header>
+                                                <p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
+                                                suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+                                            </article>
+
+                                    </li>
+                                    <li>
+
+                                        <!-- Excerpt -->
+                                            <article class="box excerpt">
+                                                <header>
+                                                    <span class="date">July 28</span>
+                                                    <h3><a href="#">And another post</a></h3>
+                                                </header>
+                                                <p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
+                                                suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+                                            </article>
+
+                                    </li>
+                                    <li>
+
+                                        <!-- Excerpt -->
+                                            <article class="box excerpt">
+                                                <header>
+                                                    <span class="date">July 24</span>
+                                                    <h3><a href="#">One more post</a></h3>
+                                                </header>
+                                                <p>Lorem ipsum dolor odio facilisis convallis. Etiam non nunc vel est
+                                                suscipit convallis non id orci lorem ipsum sed magna consequat feugiat lorem dolore.</p>
+                                            </article>
+
+                                    </li>
+                                </ul>
+                            </section>
+
+                        <!-- Highlights -->
+                            <section>
+                                <ul class="divided">
+                                    <li>
+
+                                        <!-- Highlight -->
+                                            <article class="box highlight">
+                                                <header>
+                                                    <h3><a href="#">Something of note</a></h3>
+                                                </header>
+                                                <a href="#" class="imageothers image left"><img src="assets/img/homepageimages/misc/pic06.jpg" alt="" /></a>
+                                                <p>Phasellus  sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
+                                                viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
+                                                convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
+                                                facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
+                                                <ul class="actions">
+                                                    <li><a href="#" class="button icon fa-file">Learn More</a></li>
+                                                </ul>
+                                            </article>
+
+                                    </li>
+                                    <li>
+
+                                        <!-- Highlight -->
+                                            <article class="box highlight">
+                                                <header>
+                                                    <h3><a href="#">Something of less note</a></h3>
+                                                </header>
+                                                <a href="#" class="imageothers image left"><img src="assets/img/homepageimages/misc/pic07.jpg" alt="" /></a>
+                                                <p>Phasellus  sed laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam
+                                                viverra sit amet mollis tortor congue magna lorem ipsum dolor et quisque ut odio facilisis
+                                                convallis. Etiam non nunc vel est suscipit convallis non id orci. Ut interdum tempus
+                                                facilisis convallis. Etiam non nunc vel est suscipit convallis non id orci.</p>
+                                                <ul class="actions">
+                                                    <li><a href="#" class="button icon fa-file">Learn More</a></li>
+                                                </ul>
+                                            </article>
+
+                                    </li>
+                                </ul>
+                            </section>
+
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+    <div id="footer-wrapper">
+        <div id="footer" class="container">
+            <!-- <header>
+                <h2>Questions or comments? <strong>Get in touch.</strong></h2>
+            </header> -->
+            <div class="row">
+                <div class="6u 12u(mobile)">
+                    <section>
+                        <div class="row">
+                            <div class="4u 12u(mobile)">
+                                <section class="widget links">
+                                    <h3><strong>Random Stuff</strong></h3>
+                                    <ul>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                    </ul>
+                                </section>
+                            </div>
+                            <div class="4u 12u(mobile)">
+                                <section class="widget links">
+                                    <h3><strong>Random Stuff</strong></h3>
+                                    <ul>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                    </ul>
+                                </section>
+                            </div>
+                            <div class="4u 12u(mobile)">
+                                <section class="widget links">
+                                    <h3><strong>Random Stuff</strong></h3>
+                                    <ul>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                        <li><a href="/">Etiam feugiat</a></li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="6u 12u(mobile)">
+                    <section>
+                        <h3>Questions or comments? <strong>Get in touch.</strong></h3>
+                        <form method="post" action="#">
+                            <div class="row 50%">
+                                <div class="6u 12u(mobile)">
+                                    <input name="name" placeholder="Name" type="text" />
+                                </div>
+                                <div class="6u 12u(mobile)">
+                                    <input name="email" placeholder="Email" type="text" />
+                                </div>
+                            </div>
+                            <div class="row 50%">
+                                <div class="12u">
+                                    <textarea name="message" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="row 50%">
+                                <div class="6u 12u(mobile)"></div>
+                                <div class="6u 12u(mobile)">
+                                    <a href="#" class="form-button-submit button icon fa-envelope">Send Message</a>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </div>

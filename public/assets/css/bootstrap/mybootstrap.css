@@ -1,0 +1,21 @@
+.mythumbnail {
+	height: 100%;
+	width: 100%;
+	max-width: 400px;
+}
+
+.resizedTextbox {
+	width: 400px;
+	height: 80px
+}
+
+.resizedTextboxtitle {
+	width: 400px;
+	height: 40px
+}
+
+.thumbnailofphoto {
+	height: 100%;
+	width: 100%;
+	max-width: 400px;
+}
