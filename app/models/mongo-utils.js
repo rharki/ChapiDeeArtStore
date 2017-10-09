@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var envir = 1; // 1 for local hosting
-// var envir = 2; // 2 for mlab db hosting
+// var envir = 1; // 1 for local hosting
+var envir = 2; // 2 for mlab db hosting
 
 function mongooseConnect() {
     // console.log("Hi from ArtWebsite mongooseConnect!");
