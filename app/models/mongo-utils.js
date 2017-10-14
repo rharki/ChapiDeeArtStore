@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
 
+// var envir = 1; // 1 for local hosting
+var envir = 2; // 2 for mlab db hosting
+
 function mongooseConnect() {
     var envir = 2; // 1 for local hosting
     // var envir = 2; // 2 for mlab db hosting
