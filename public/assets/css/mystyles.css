@@ -74,6 +74,7 @@
 
    -webkit-column-count: 3;
    -webkit-column-gap:   1.5em;
+   -webkit-column-break-inside: avoid;
    -moz-column-count:    3;
    -moz-column-gap:      1.5em;
    column-count:         3;
@@ -86,6 +87,8 @@
   /* Just in case there are inline attributes */
   width: 100% !important;
   height: auto !important;
+  -webkit-column-break-inside: avoid;
+  display: inline-block;
 }
 
 @media (max-width: 1200px) {
@@ -137,6 +140,11 @@
 
 .photosgallerydesc {
     padding: 0 0 1em 0;
+}
+
+.dontbreakthissection {
+    -webkit-column-break-inside: avoid;
+    display: inline-block;
 }
 
 .imageincontainer {
