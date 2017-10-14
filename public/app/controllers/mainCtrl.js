@@ -12,12 +12,16 @@ angular.module('mainController', ['masterServices'])
         $scope.testing = "Rahul";
 
         $scope.sendEmail = function() {
-            // console.log("sending email");
+            console.log("sending email");
+            // console.log($scope.formname);
             $scope.loading = false;
             sendEmailQueryDetails = {};
-            sendEmailQueryDetails.emailmessage = $scope.formmessage;
             sendEmailQueryDetails.emailname = $scope.formname;
             sendEmailQueryDetails.emailemail = $scope.formemail;
+            sendEmailQueryDetails.emailmessage = $scope.formmessage;
+            console.log(sendEmailQueryDetails.emailname);
+            console.log(sendEmailQueryDetails.emailemail);
+            console.log(sendEmailQueryDetails.emailmessage);
             Master.sendEmailQuery(sendEmailQueryDetails).then(function(data) {
                 $scope.loading = true;
                 if (!data.data.success) {

@@ -7,8 +7,6 @@ var appRoutes = require('./app/routes/api')(router);
 var path = require('path');
 var PORT = process.env.PORT || 8080;
 
-
-
 var morgan = require('morgan');
 app.use(morgan('dev'));
 

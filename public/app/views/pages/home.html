@@ -53,7 +53,7 @@
         <div class="container">
             <section id="photosgallery">
                     <div class="" ng-repeat="collection in collections | orderBy: 'displaysequence'">
-                            <section >
+                            <section class="dontbreakthissection">
                                 <a href="/collections/{{ collection._id }}" class="imagecollection image featured">
                                     <img ng-src="{{ 'uploads/images/fulls/' + collection.categories[0] + '/' + collection.coverimage.keyitemimagename || 'assets/img/misc/backupimageforcollections.jpg' }}" alt="Sorry, collection cover image not available">
                                 </a>

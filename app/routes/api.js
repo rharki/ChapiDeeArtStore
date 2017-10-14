@@ -13,9 +13,14 @@ var router = function (router) {
 
     router.get('/getbannerimages', function(req, res) {
         //reading directory in synchronous way
+        // console.log("reached getBannerImages");
+        console.log(__dirname);
+        var bannerimagespath = path.join(__dirname, '../../public/assets/img/homepageimages/bannerimages/');
+        console.log(bannerimagespath);
         var mypath = '/Users/apple/Documents/CODING/MyProjects/Art Website/public/assets/img/homepageimages/bannerimages/';
         try {
-            var randomfiles = fs.readdirSync(mypath);
+            // var randomfiles = fs.readdirSync(mypath);
+            var randomfiles = fs.readdirSync(bannerimagespath);
             return res.json({ success: true, message: 'Returning all banner images!', bannerimages: randomfiles });
         } catch (err ){
             return res.status(400).json({ success: false, message: err });
@@ -240,14 +245,17 @@ var router = function (router) {
         var emailmessage = req.body.emailmessage;
         var emailname = req.body.emailname;
         var emailemail = req.body.emailemail;
+        // console.log(emailemail);
+        // console.log(emailname);
+        // console.log(emailmessage);
 
         var send = gmailsend({
             //var send = require('../index.js')({
-            user: 'rharki@gmail.com',
+            user: 'artbyspm@gmail.com',
             // user: credentials.user,                  // Your GMail account used to send emails
-            pass: 'fishnchill12',
+            pass: 'edcrfvtgb',
             // pass: credentials.pass,                  // Application-specific password
-            to:   'rahul.harkisanka@gmail.com',
+            to:   'rharki@gmail.com',
             // to:   credentials.user,                  // Send to yourself
                                                    // you also may set array of recipients:
                                                    // [ 'user1@gmail.com', 'user2@gmail.com' ]
@@ -286,8 +294,13 @@ var router = function (router) {
 
         var storage = multer.diskStorage({
             destination: function (req, file, callback) {
-                mypath = '/Users/apple/Documents/CODING/MyProjects/Art Website/public/uploads/images/fulls/' + categoryid;
-                dest = '/Users/apple/Documents/CODING/MyProjects/Art Website/public/uploads/images/thumbnails/' + categoryid;
+                console.log(__dirname);
+                // mypath = '/Users/apple/Documents/CODING/MyProjects/Art Website/public/uploads/images/fulls/' + categoryid;
+                mypath = path.join(__dirname, '../../public/uploads/images/fulls/' + categoryid);
+                console.log(mypath);
+                // dest = '/Users/apple/Documents/CODING/MyProjects/Art Website/public/uploads/images/thumbnails/' + categoryid;
+                dest = path.join(__dirname, '../../public/uploads/images/thumbnails/' + categoryid);
+                console.log(dest);
                 mkdirp.sync(mypath);
                 mkdirp.sync(dest);
                 callback(null, mypath);

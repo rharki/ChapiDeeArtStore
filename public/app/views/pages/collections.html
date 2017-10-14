@@ -8,8 +8,7 @@
         <div class="container">
             <section id="photosgallery">
                 <div class="" ng-repeat="image in collections.images">
-                    <section>
-                <!-- Feature -->
+                    <section class="dontbreakthissection">
                         <a href="/product/{{image._id}}" class="imagecollection image featured">
                             <img ng-src="{{ 'uploads/images/fulls/' + collectioncategoryid + '/' + image.keyitemimagename || 'assets/img/misc/backupimageforcollectionsimages.jpg' }}" alt="preview of painting not available">
                         </a>
